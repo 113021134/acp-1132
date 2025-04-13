@@ -13,15 +13,8 @@ import requests
 import xml.etree.ElementTree as ET
 from google.colab import files
 
-# Use your GitHub username here
 username = '113021135'
-
-# Optional: If you have a token, you can increase your rate limit
-# token = 'your_personal_access_token'
-# headers = {'Authorization': f'token {token}'}
 headers = {}
-
-# GitHub API URL for public repositories of a user
 url = f'https://api.github.com/users/113021135/repos'
 
 response = requests.get(url, headers=headers)
@@ -33,19 +26,17 @@ if response.status_code == 200:
     for repo in repos:
         repo_elem = ET.SubElement(root, 'repository')
 
-        # Repo URL
+
         url_elem = ET.SubElement(repo_elem, 'URL')
         url_elem.text = repo.get('html_url', '')
 
-        # Repo Description
         about_elem = ET.SubElement(repo_elem, 'About')
         about_elem.text = repo.get('description') or ''
 
-        # Last Updated
         updated_elem = ET.SubElement(repo_elem, 'Last_Updated')
         updated_elem.text = repo.get('updated_at', '')
 
-        # Languages
+
         languages_url = repo.get('languages_url')
         languages_elem = ET.SubElement(repo_elem, 'Languages')
         if languages_url:
@@ -55,19 +46,16 @@ if response.status_code == 200:
                     lang_elem = ET.SubElement(languages_elem, 'Language')
                     lang_elem.text = lang
 
-        # Commits (estimate using 'commits_url' with /commits endpoint)
+
         commits_url = repo.get('commits_url', '').replace('{/sha}', '')
         commits_elem = ET.SubElement(repo_elem, 'Number_of_Commits')
         commit_response = requests.get(commits_url, headers=headers)
         if commit_response.status_code == 200:
             commits = commit_response.json()
-            commits_elem.text = str(len(commits))  # Approximate count
+            commits_elem.text = str(len(commits))
         else:
             commits_elem.text = '0'
 
-    # Save XML file
     tree = ET.ElementTree(root)
     tree.write('repos.xml', encoding='utf-8', xml_declaration=True)
-
-    # Download
     files.download('repos.xml')
