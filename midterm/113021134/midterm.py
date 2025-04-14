@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 root = ET.Element("Repositories")
 idCount = 0
-currentDesc = None
+# currentDesc = None
 currentLastUpdated = None
 
 class GithubSpider(scrapy.Spider):
@@ -12,21 +12,22 @@ class GithubSpider(scrapy.Spider):
     start_urls = ['https://github.com/113021134?tab=repositories']
 
     def parse(self, response):
-        global currentDesc, currentLastUpdated
+        global currentLastUpdated
         repos = response.css('li[itemprop="owns"]')
 
         for repo in repos:
-            currentDesc = None if len(response.css('p[itemprop="description"]::text').get(default='').strip()) == 0 else response.css('p[itemprop="description"]::text').get(default='').strip()
             currentLastUpdated = repo.css('relative-time::attr(datetime)').get()
-            
+
             relative_url = repo.css('a[itemprop="name codeRepository"]::attr(href)').get()
 
             if relative_url:
                 full_url = response.urljoin(relative_url)
                 yield scrapy.Request(full_url, callback=self.parse_repo)
+            
+
 
     def parse_repo(self, response):
-        global idCount, root, currentDesc, currentLastUpdated
+        global idCount, root, currentLastUpdated
 
         repoName = response.css('strong.mr-2.flex-self-stretch a::text').get(default='').strip()
         readmeDiv = response.css('article[itemprop="text"]')
@@ -37,16 +38,23 @@ class GithubSpider(scrapy.Spider):
         idCount += 1
         rep = ET.SubElement(root, "repository")
         rep.set("id", str(idCount))
+
         ET.SubElement(rep, "URL").text = response.url
         ET.SubElement(rep, "last_updated").text = currentLastUpdated
 
+        ET.SubElement(rep, "name").text = repoName        
+
+        currentDesc = response.css('p.f4.my-3::text').get(default='No Description').strip()
+
+        if len(currentDesc) != 0:
+            ET.SubElement(rep, "description").text = currentDesc
+
+
         if isEmpty:
-            ET.SubElement(rep, "name").text = currentDesc
             ET.SubElement(rep, "languages").text = "Empty"
             ET.SubElement(rep, "commits").text = "Empty"
             return
         else:
-            ET.SubElement(rep, "name").text = repoName
             readme = ET.SubElement(rep, "README")
 
             if readmeDiv:
@@ -76,6 +84,7 @@ class GithubSpider(scrapy.Spider):
                 'repositoryUrl': response.url,
                 'name': repoName,
             }
+        
 
     def closed(self, reason):
         tree = ET.ElementTree(root)
