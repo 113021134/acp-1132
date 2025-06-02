@@ -1,0 +1,24 @@
+{
+    "_default": {
+        "1": {
+            "id": 1, 
+            "name": "blue channel",
+            "quantity": 10
+            }, 
+        "2": {
+            "id": 2,
+            "name": "cartoon channel",
+            "quantity": 12
+        }, 
+        "3": {
+            "id": 3, 
+            "name": "red channel",
+            "quantity": 3
+        }, 
+        "4": {
+            "id": 4, 
+            "name": "kenly fraga channel",
+            "quantity": 4
+        }
+    }
+}
