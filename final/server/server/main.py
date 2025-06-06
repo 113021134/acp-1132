@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from tinydb import TinyDB, Query
-
+from webScrape import getPrice
 db = TinyDB('db.json')
 
 app = Flask(__name__)
@@ -59,3 +59,9 @@ def item(id):
         })
     else:
         return jsonify({"error": "Item not found"}), 404
+    
+@app.route("/compare-price/<string:perfume_name>")
+def comparePrice(perfume_name):
+    result = getPrice(perfume_name)
+
+    return result
