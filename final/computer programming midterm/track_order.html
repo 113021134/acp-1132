@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta  http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Programming Midterm</title>
+    <title>Track My Order</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -18,7 +19,7 @@
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -32,45 +33,22 @@
         </div>
     </section>
 
-    <section id="prodetails" class="section-p1">
-        <div class="single-pro-image">
-            <img src="products/missdior.jpg" width="100%" id="MainImg" alt="">
-
-            <div class="small-img-row">
-                <div class="small-img-col">
-                    <img src="products/missdior.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="products/missdior2.webp" width="100%" class="small-img" alt="">
-                </div>
-            </div>
+    <section id="order-tracking" class="section-p1">
+        <h2>Track Your Order</h2>
+        <p>Enter your order ID below to check its status.</p>
+        <div class="tracking-form">
+            <input type="text" id="order-id-input" placeholder="Enter Order ID (e.g., ORD123456)">
+            <button id="track-order-btn">Track Order</button>
         </div>
 
-        <div class="single-pro-details">
-            <h6>Home / Product</h6>
-            <h4>"Libre Eau de Parfum" </h4>
-            <h2 class="price" id="price">$3999 TWD</h2>
-        
-            <div class="size-options">
-                <button class="size-btn" data-price="3999">50 mL</button>
-                <button class="size-btn" data-price="4999">100 mL</button>
-            </div>
-        
-            <input type="number" value="1" class="quantity-input">
-            <button class="add-to-cart-btn">Add to Cart</button>
-        
-            <h4>Product details</h4>
-            <span>In 1947, Miss Dior was born to re-enchant women's lives with the sparkling colors of love. At the time, this scent was synonymous with renewed happiness, poetry, and harmony for Christian Dior. Miss Dior intrigues, excites and invites us to marvel at love and all the beauty in the world.</span>
+        <div id="order-status">
+            <h3>Order Status</h3>
+            <p><strong>Order ID:</strong> <span id="display-order-id"></span></p>
+            <p><strong>Status:</strong> <span id="display-status"></span></p>
+            <p><strong>Last Update:</strong> <span id="display-last-update"></span></p>
+            <p id="estimated-delivery"></p>
         </div>
     </section>
-
-     <section id="product1" class="section-p1">
-        <h2 id="related-products-title">Related women's Fragrances</h2>
-        <p id="related-products-paragraph">Explore more products you might like</p>
-        <div id="product-container-related-women" class="product-container">
-        </div>
-    </section>
-    
 
     <section id="newsletter" class="section-p1 section-m1">
         <div class="newstext">
@@ -112,9 +90,9 @@
         <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign in</a>
+            <a href="track_order.html">Track My Order</a>
             <a href="#">Gift Vouchers</a>
             <a href="#">View Cart</a>
-            <a href="track_order.html">Track My Order</a>
             <a href="#">Help</a>
         </div>
 
@@ -133,19 +111,6 @@
             <p>&copy; 2024 Computer Programming Midterm. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        var MainImg = document.getElementById('MainImg');
-        var smallimg = document.getElementsByClassName('small-img');
-
-        smallimg[0].onclick = function () {
-            MainImg.src = smallimg[0].src;
-        }
-        smallimg[1].onclick = function () {
-            MainImg.src = smallimg[1].src;
-        }
-    </script>
-
 
     <script src="script.js"></script>
 </body>

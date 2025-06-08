@@ -355,6 +355,50 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+    const trackOrderBtn = document.getElementById('track-order-btn');
+    if (trackOrderBtn) {
+        trackOrderBtn.addEventListener('click', function() {
+            const orderIdInput = document.getElementById('order-id-input');
+            const displayOrderId = document.getElementById('display-order-id');
+            const displayStatus = document.getElementById('display-status');
+            const displayLastUpdate = document.getElementById('display-last-update');
+            const estimatedDelivery = document.getElementById('estimated-delivery');
+            const orderStatusDiv = document.getElementById('order-status');
+
+            const orderId = orderIdInput.value.trim();
+
+            if (orderId) {
+                let status = "Processing";
+                let lastUpdate = new Date().toLocaleString();
+                let deliveryEstimate = "3-5 business days";
+
+                if (orderId.includes("SHIPPED")) {
+                    status = "Shipped";
+                    deliveryEstimate = "1-2 business days";
+                } else if (orderId.includes("DELIVERED")) {
+                    status = "Delivered";
+                    deliveryEstimate = "Order has been successfully delivered.";
+                } else if (orderId.includes("CANCELLED")) {
+                    status = "Cancelled";
+                    deliveryEstimate = "Please contact support for more details.";
+                }
+
+                displayOrderId.textContent = orderId;
+                displayStatus.textContent = status;
+                displayLastUpdate.textContent = lastUpdate;
+                estimatedDelivery.textContent = `Estimated Delivery: ${deliveryEstimate}`;
+                orderStatusDiv.style.display = 'block';
+            } else {
+                displayStatus.textContent = "Please enter a valid Order ID.";
+                orderStatusDiv.style.display = 'block';
+                displayOrderId.textContent = '';
+                displayLastUpdate.textContent = '';
+                estimatedDelivery.textContent = '';
+            }
+        });
+    }
+;
+
 
 document.getElementById('page1-btn')?.addEventListener('click', function (e) {
   e.preventDefault();
