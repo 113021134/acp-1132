@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Computer Programming Midterm</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
+  <style>
+    form {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 200px;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      border-color: #088178;
+      outline: none;
+    }
+    .char-count {
+      text-align: right;
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
+    .green {
+      display: inline-block;
+      background: #088178;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    .green:hover {
+      background: #06655e;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 300px;
+      width: 90%;
+    }
+    .modal-content button {
+      margin-top: 12px;
+      padding: 8px 16px;
+      border: none;
+      background: #088178;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .modal-content button:hover {
+      background: #06655e;
+    }
+    @media (max-width: 600px) {
+      form {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <section id="header">
+    <a href="index.html"><img src="elements/logo.png" class="logo" alt="Logo"></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="contact.html">Contact us</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </section>
+
+  <h3 style="text-align:center; margin-top:30px;" id="form-header">Send us a message and we'll get back to you as soon as possible</h3>
+
+  <!-- Contact Form -->
+<section id="contact-form-section">
+  <form id="contact-form">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="entry.124519112" placeholder="Enter your name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="entry.1889686900" placeholder="your_email@example.com" required>
+
+    <label for="telephone">Telephone</label>
+    <input type="text" id="telephone" name="entry.1718451018" placeholder="your telephone number" required>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="entry.702267991" rows="6" placeholder="Type your message here..." required></textarea>
+
+    <button type="submit" class="green">Submit</button>
+  </form>
+
+  <div id="confirmation-message" style="display:none;">
+    <h3 style = "text-align: center;" >Your response has been submitted.</h3>
+  </div>
+</section>
+<section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Subscribe to our newsletter</h4>
+            <p>Get the latest updates and <span>offers.</span></p>
+        </div>
+        <div class="newsform">
+            <input type="email" placeholder="Enter your email">
+            <button class="normal">Subscribe</button>
+        </div>
+    </section>
+  <!-- FOOTER -->
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="elements/logo.png" alt="Logo">
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> 500號, Liufeng Rd, Wufeng District, Taichung City, 413</p>
+      <p><strong>Phone:</strong> +889 987-664-344</p>
+      <p><strong>Hours:</strong> 10.00 - 21.00 Mon - Sat</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="about.html">About us</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="Terms_conditions.html">Terms & Conditions</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign in</a>
+      <a href="#">Gift Vouchers</a>
+      <a href="#">View Cart</a>
+      <a href="track_order.html">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="col install">
+      <h4>Install app</h4>
+      <p>From App Store or Google Play</p>
+      <div class="row">
+        <img src="elements/appstore.jpg" alt="App Store">
+        <img src="elements/googleplay.jpg" alt="Google Play">
+      </div>
+      <p>Secured Payment Gateways</p>
+      <img src="elements/payment.png" alt="Payment Gateways">
+    </div>
+    <div class="copyright">
+      <p>© 2024 Computer Programming Midterm. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  const form = document.getElementById('contact-form');
+  const confirmation = document.getElementById('confirmation-message');
+  const formHeader = document.getElementById('form-header');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch("https://docs.google.com/forms/d/e/1FAIpQLSfhgozmjzZpha-RVvoE7NW_Kndd4nxUsaCcCmtRD3IAABHAzw/formResponse", {
+      method: "POST",
+      body: formData,
+      mode: "no-cors"
+    }).then(() => {
+      form.style.display = "none";
+      formHeader.style.display = "none";
+      confirmation.style.display = "block";
+    }).catch(() => {
+      alert("There was an error submitting the form.");
+    });
+  });
+</script>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta  http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Programming Midterm</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><img src="elements/logo.png" class="logo" alt="Logo"></a>
+    
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="blog.html">FAQ</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="active fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <div class="cart">
+        <section id="product1" class="section-p1">
+            <div class="product-container" id="productContainer">
+            </div>
+        </section>
+    </div>
+    
+    <div class="total">
+        <h3>total: </h3>
+        <button>Checkout</button> <!-- TODO on click send post to delete all cart -->
+    </div>
+    
+    <footer class="section-p1">
+        <div class="col">
+            <img src="elements/logo.png" class="logo" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 500號, Liufeng Rd, Wufeng District, Taichung City, 413</p>
+            <p><strong>Phone:</strong> +889 987-664-344</p>
+            <p><strong>Hours:</strong> 10.00 - 21.00 Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="Terms_conditions.html">Terms & Conditions</a>
+        <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign in</a>
+            <a href="#">Gift Vouchers</a>
+            <a href="#">View Cart</a>
+            <a href="track_order.html">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install app</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="elements/appstore.jpg" alt="">
+                <img src="elements/googleplay.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="elements/payment.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 Computer Programming Midterm. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const quantityInputs = document.querySelectorAll('.cart .quantity');
+
+        quantityInputs.forEach(input => {
+            input.addEventListener('input', function () {
+                const value = parseInt(this.value);
+
+                if (value === 0) {
+                    const productDiv = this.closest('.product');
+                    if (productDiv) {
+                        productDiv.remove();
+                    }
+                } else {
+                    const priceElement = this.closest('.product').querySelector('h4');
+                    const price = 3250; // Assuming a fixed price for the product
+                    priceElement.textContent = `$${price * value} TWD`;
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+    .total {
+        align-items: center;
+        padding: 20px;
+    }
+    .total button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('productContainer');
+        const totalElement = document.querySelector('.total h3');
+
+        function updateTotal() {
+            let total = 0;
+            document.querySelectorAll('.des').forEach(des => {
+                const quantity = parseInt(des.querySelector('.quantity').value);
+                
+                // Extract price from h4 like "$2150 TWD" → 2150
+                const priceText = des.querySelector('h4').textContent;
+                const price = parseFloat(priceText.replace(/[^0-9.]/g, ''));
+                total += price * quantity
+                console.log(`Quantity: ${quantity}, Price: ${price}, Total: ${quantity * price}`);
+            });
+
+            totalElement.textContent = `Total: $${total} TWD`;
+        }
+
+        function createProductCard(item) {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product';
+            productDiv.setAttribute('data-price', item.price);
+
+            productDiv.innerHTML = `
+                <img src="${item.image}" alt="">
+                <div class="des">
+                    <span>${item.brand}</span>
+                    <h5>"${item.name}"</h5>
+                    <input type="number" value="${item.quantity}" class="quantity" name="quantity" style="width: 50px; height: 30px; font-size: larger;"> 
+                    <h4>$${item.price * item.quantity} TWD</h4>
+                </div>
+            `;
+
+            // Add input event
+            productDiv.querySelector('.quantity').addEventListener('input', function () {
+                const value = parseInt(this.value);
+                if (value === 0) {
+                    productDiv.remove();
+                } else {
+                    const price = parseInt(productDiv.getAttribute('data-price'));
+                    productDiv.querySelector('h4').textContent = `$${price * value} TWD`;
+                }
+                updateTotal();
+            });
+
+            container.appendChild(productDiv);
+        }
+
+        const getUserId = () => {
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                cookie = cookie.trim();
+                if (cookie.startsWith('userId=')) {
+                    return cookie.substring(7);
+                }
+                return null;
+            }
+        }
+        const userId = getUserId();
+        
+        if(userId == null){ 
+            console.log("no cookies");
+            return location.href='signin.html'
+        };
+        // Fetch from /cart
+        fetch(`http://127.0.0.1:5000/cart?userId=${userId}`)
+            .then(res => res.json())
+            .then(data => {
+                if(data.length == 0) console.log("empty")
+                else {
+                    data.forEach(item => createProductCard(item));
+                    updateTotal()
+                }
+            })
+            .catch(err => {
+                console.error("Failed to load cart:", err);
+            });
+    });
+</script>
+
+</html>
