@@ -1,84 +1,196 @@
 {
     "_default": {
         "1": {
-            "id": 1, 
-            "name": "blue channel",
-            "quantity": 0
-            }, 
+            "name": "Le Beau Le Parfum",
+            "brand": "Jean Paul Gaultier",
+            "image": "products/JPG Lbeaufront.jpg",
+            "quantity": 69,
+            "size": 75,
+            "price": 2499
+        }, 
         "2": {
-            "id": 2,
-            "name": "cartoon channel",
-            "quantity": 0
+            "name": "Le Male Le Parfum",
+            "brand": "Jean Paul Gaultier",
+            "image": "products/LeParfum.jpg",
+            "quantity": 100,
+            "size": 75,
+            "price": 2799
         }, 
         "3": {
-            "id": 3, 
-            "name": "red channel",
-            "quantity": 0
+            "name": "Bleu de Chanel",
+            "brand": "Chanel",
+            "image": "products/Chanel BdC.jpg",
+            "quantity": 100,
+            "size": 50,
+            "price": 2999
         }, 
         "4": {
-            "id": 4, 
-            "name": "kenly fraga channel",
-            "quantity": 0
+            "name": "Sauvage",
+            "brand": "Dior",
+            "image": "products/Dior Sauvage.jpg",
+            "quantity": 100,
+            "size": 60,
+            "price": 2499
         },
         "5": {
-            "id": 5, 
-            "name": "blue channel",
-            "quantity": 0
+            "name": "Stronger With You Absolutely",
+            "brand": "Giorgio Armani",
+            "image": "products/armani swyabs.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 3499
             }, 
         "6": {
-            "id": 6,
-            "name": "cartoon channel",
-            "quantity": 0
+            "name": "Althair",
+            "brand": "Parfum De Marly",
+            "image": "products/Althair pdm.jpg",
+            "quantity": 100,
+            "size": 75,
+            "price": 5999
         }, 
         "7": {
-            "id": 7, 
-            "name": "red channel",
-            "quantity": 0
+            "name": "Dylan Blue Pour Homme",
+            "brand": "Versace",
+            "image": "products/DylanBlueVersace.jpg",
+            "quantity": 100,
+            "size": 50,
+            "price":1999
         }, 
         "8": {
-            "id": 8, 
-            "name": "kenly fraga channel",
-            "quantity": 0
+            "name": "Acqua Di Gio Profondo",
+            "brand": "Giorgio Armani",
+            "image": "products/acquaarmaniprofondo.jpg",
+            "quantity": 100,
+            "size": 50,
+            "price": 1999
         },
         "9": {
-            "id": 9, 
-            "name": "blue channel",
-            "quantity": 0
-            }, 
+            "name": "Baccarat Rouge 540",
+            "brand": "Maison Francis Kurkdjian",
+            "image": "products/Baccarat540.jpg",
+            "quantity": 100,
+            "size": 35,
+            "price": 4499
+        }, 
         "10": {
-            "id": 10,
-            "name": "cartoon channel",
-            "quantity": 0
+            "name": "YSL Y",
+            "brand": "Yves Saint Laurent",
+            "image": "products/YSL.jpg",
+            "quantity": 100,
+            "size": 60,
+            "price": 1999
         }, 
         "11": {
-            "id": 11, 
-            "name": "red channel",
-            "quantity": 0
+            "name": "MYSLF",
+            "brand": "Yves Saint Laurent",
+            "image": "products/YSLMYSLF.avif",
+            "quantity": 100,
+            "size": 60,
+            "price": 1999
         }, 
         "12": {
-            "id": 12, 
-            "name": "kenly fraga channel",
-            "quantity": 0
+            "name": "Aventus",
+            "brand": "Creed",
+            "image": "products/Creedaventus.jpg",
+            "quantity": 100,
+            "size": 30,
+            "price": 6999
         },
         "13": {
-            "id": 13, 
-            "name": "blue channel",
-            "quantity": 0
-            }, 
+            "name": "Tobacco Vanille",
+            "brand": "Tom Ford",
+            "image": "products/tomfordtobvan.jpg",
+            "quantity": 100,
+            "size": 75,
+            "price": 8499
+        }, 
         "14": {
-            "id": 14,
-            "name": "cartoon channel",
-            "quantity": 0
-        }, 
+            "name": "The Most Wanted Parfum",
+            "brand": "Azzaro",
+            "image": "products/Azzaromostwanted.jpg",
+            "quantity": 100,
+            "size": 50,
+            "price": 1999
+        },
         "15": {
-            "id": 15, 
-            "name": "red channel",
-            "quantity": 0
-        }, 
+            "name": "Born in Roma Uomo Intense",
+            "brand": "Valentino",
+            "image": "products/Valentino borninroma.jpg",
+            "quantity": 100,
+            "size": 50,
+            "price": 2499
+        },
         "16": {
-            "id": 16, 
-            "name": "kenly fraga channel",
-            "quantity": 0
+            "name": "Eros Flame",
+            "brand": "Versace",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 2999
+        },
+        "17": {
+            "name": "Donna Born In Roma",
+            "brand": "Valentino",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 2000
+        },  
+        "18": {
+            "name": "Libre",
+            "brand": "Yves Saint Laurent",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 4100
+        },  
+        "19": {
+            "name": "Good Girl Blush",
+            "brand": "Carolina Herrera",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 4000
+        }, 
+        "20": {
+            "name": "Miss Dior",
+            "brand": "Dior",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 3999     
+        },  
+        "21": {
+            "name": "Coco Mademoisell",
+            "brand": "Chanel",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 3999
+        },  
+        "22": {
+            "name": "Bloom",
+            "brand": "Gucci",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 3100
+        },  
+        "23": {
+            "name": "Greenley",
+            "brand": "Parfum De Marly",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 8200
+        }, 
+        "24": {
+            "name": "God Of Fire",
+            "brand": "Stephane Humbert Lucas",
+            "image": "products/eros flame.jpg",
+            "quantity": 100,
+            "size": 100,
+            "price": 8400
         }
     }
 }

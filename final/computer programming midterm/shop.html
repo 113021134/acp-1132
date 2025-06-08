@@ -6,7 +6,8 @@
     <meta  http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Programming Midterm</title>
-    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">
+
     <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
 </head>
 
@@ -19,9 +20,9 @@
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
                 <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
@@ -38,269 +39,279 @@
     </section>
 
     <section id="product1" class="section-p1">
-        <div class="product-container">
-            <div class="product" onclick="window.location.href='JPG_LeBeau.html'">
+        <div class="product-container" id="page1-products">
+            <div class="product" onclick="window.location.href='productPage/JPG_LeBeau.html'" data-product-id="1">
                 <img src="products/JPG LbeauLparfum.jpg" alt="">
                 <div class="des">
                     <span>Jean Paul Gaultier</span>
                     <h5>"Le Beau Le Parfum"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$3250 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='JPG_LeParfum.html';">
+            <div class="product" onclick="location.href='productPage/JPG_LeParfum.html';" data-product-id="2">
                 <img src="products/LeParfum.jpg" alt="">
                 <div class="des">
                     <span>Jean Paul Gaultier</span>
                     <h5>"Le Male Le Parfum"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$3000 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='JPG_bdc.html';">
+            <div class="product" onclick="location.href='productPage/JPG_bdc.html';" data-product-id="3">
                 <img src="products/BDC chanel.jpg" alt="">
                 <div class="des">
                     <span>Chanel</span>
                     <h5>"Bleu de Chanel"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$3650 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='JPG_sauvage.html';">
+            <div class="product" onclick="location.href='productPage/JPG_sauvage.html';" data-product-id="4">
                 <img src="products/Dior Sauvage.jpg" alt="">
                 <div class="des">
                     <span>Dior</span>
                     <h5>"Sauvage"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$3100 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='JPG_StrongerWith.html';">
+            <div class="product" onclick="location.href='productPage/JPG_StrongerWith.html';" data-product-id="5">
                 <img src="products/armani swyabs.jpg" alt="">
                 <div class="des">
                     <span>Giorgio armani</span>
                     <h5>"Stronger With You Absolutely"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$3300 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='JPG_birui.html';">
+            <div class="product" onclick="location.href='productPage/JPG_birui.html';" data-product-id="15">
                 <img src="products/Valentino borninroma.jpg" alt="">
                 <div class="des">
                     <span>Valentino</span>
                     <h5>"Born in Roma Uomo Intense"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$3430 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='JPG_ef.html';">
+            <div class="product" onclick="location.href='productPage/JPG_ef.html';" data-product-id="16">
                 <img src="products/eros flame.jpg" alt="">
                 <div class="des">
                     <span>Versace</span>
                     <h5>"Eros Flame"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$3000 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='JPG_althair.html';">
+            <div class="product" onclick="location.href='productPage/JPG_althair.html';" data-product-id="6">
                 <img src="products/Althair pdm.jpg" alt="">
                 <div class="des">
                     <span>Parfum De Marly</span>
                     <h5>"Althair"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$7000 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_DylanBlueVersace.html';" data-product-id="7">
                 <img src="products/DylanBlueVersace.jpg" alt="">
                 <div class="des">
                     <span>Versace</span>
                     <h5>"Dylan Blue Pour Homme"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$2300 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_acquaarmaniprofondo.html';" data-product-id="8">
                 <img src="products/acquaarmaniprofondo.jpg" alt="">
                 <div class="des">
                     <span>Giorgio Armani</span>
                     <h5>"Acqua Di Gio Profondo"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$4300 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_Baccarat540.html';" data-product-id="9">
                 <img src="products/Baccarat540.jpg" alt="">
                 <div class="des">
                     <span>Maison Francis Kurkdjian</span>
                     <h5>"Baccarat Rouge 540"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$8999 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_YSL.html';" data-product-id="10">
                 <img src="products/YSL.jpg" alt="">
                 <div class="des">
                     <span>Yves Saint Laurent</span>
                     <h5>"YSL Y"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$4100 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_YSL_MYSLF.html';" data-product-id="11">
                 <img src="products/YSLMYSLF.avif" alt="">
                 <div class="des">
                     <span>Yves Saint Laurent</span>
                     <h5>"MYSLF"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$4000 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_Creedaventus.html';" data-product-id="12">
                 <img src="products/Creedaventus.jpg" alt="">
                 <div class="des">
                     <span>Creed</span>
                     <h5>"Aventus"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$11000 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_Tomford.html';" data-product-id="13">
                 <img src="products/tomfordtobvan.jpg" alt="">
                 <div class="des">
                     <span>Tom Ford</span>
                     <h5>"Tobacco Vanille"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$9550 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product">
+            <div class="product" onclick="location.href='productPage/JPG_Azzaro.html';" data-product-id="14">
                 <img src="products/Azzaromostwanted.webp" alt="">
                 <div class="des">
                     <span>Azzaro</span>
                     <h5>"The Most Wanted Parfum"</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="star" data-stars>
                     </div>
                     <h4>$2000 TWD</h4>
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
         </div>
+        <div class="product-container" id="page2-products" style="display: none;">
+            <div class="product" onclick="window.location.href='productPage/JPG_YSL_Libre.html'" data-product-id="17">
+                <img src="products/libreYSL.jpg" alt="">
+                <div class="des">
+                    <span>Yves Saint Laurent</span>
+                    <h5>"Libre"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$4700 TWD</h4>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="product" onclick="window.location.href='productPage/JPG_ch_ggb.html'" data-product-id="18">
+                <img src="products/ggb_carolina.jpg" alt="">
+                <div class="des">
+                    <span>Carolina Herrera</span>
+                    <h5>"Good Girl Blush"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$4000 TWD</h4>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="product" onclick="window.location.href='productPage/JPG_miss_dior.html'" data-product-id="19">
+                <img src="products/missdior.jpg" alt="">
+                <div class="des">
+                    <span>Dior</span>
+                    <h5>"Miss Dior"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$3999 TWD</h4>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="product" onclick="window.location.href='productPage/JPG_vltn_dbir.html'" data-product-id="20">
+                <img src="products/vltn_dbir.jpg" alt="">
+                <div class="des">
+                    <span>Valentino</span>
+                    <h5>"Donna Born In Roma"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$3999 TWD</h4>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>  
+            <div class="product" onclick="window.location.href='productPage/JPG_coco_mademoiselle.html'" data-product-id="21">
+                <img src="products/coco_chanel.png" alt="">
+                <div class="des">
+                    <span>Chanel</span>
+                    <h5>"Coco Mademoiselle"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$3999 TWD</h4>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="product" onclick="window.location.href='productPage/JPG_gucci_bloom.html'" data-product-id="22">
+                <img src="products/gucci_bloom.jpg" alt="">
+                <div class="des">
+                    <span>Gucci</span>
+                    <h5>"Bloom"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$3100 TWD</h4>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="product" onclick="window.location.href='productPage/JPG_pdm_greenley.html'" data-product-id="23">
+                <img src="products/pdm_greenley.jpg" alt="">
+                <div class="des">
+                    <span>Parfum De Marly</span>
+                    <h5>"Greenley"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$8200 TWD</h4> 
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            <div class="product" onclick="window.location.href='productPage/JPG_god_of_fire.html'" data-product-id="24">
+                <img src="products/god_of_fire.webp" alt="">
+                <div class="des">
+                    <span>Stephane Humbert Lucas</span>
+                    <h5>"God Of Fire"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                    <h4>$8400 TWD</h4>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+        </div> 
     </section>
 
     <section id="pagination" class="section-p1">
-        <a href="#">1</a>
-        <a href="#">2</a>
+        <a href="#" id="page1-btn">1</a>
+        <a href="#" id="page2-btn">2</a>
         <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
     </section>
 
@@ -334,16 +345,15 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About us</a>
-            <a href="#">Delivery Information</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="about.html">About us</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="Terms_conditions.html">Terms & Conditions</a>
+        <a href="contact.html">Contact Us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign in</a>
+            <a href="/computer programming midterm/signin.html">Sign in</a>
             <a href="#">Gift Vouchers</a>
             <a href="#">View Cart</a>
             <a href="#">Track My Order</a>
@@ -369,5 +379,102 @@
 
     <script src="script.js"></script>
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+
+    if (category) {
+        const products = document.querySelectorAll('#product1 .product');
+        products.forEach(product => {
+            const productName = product.querySelector('h5').textContent.toLowerCase();
+            const isWomens = productName.includes('baccarat rouge 540');
+            const isMens = !isWomens; // All other products are men's
+
+            if (category === 'men' && !isMens) {
+                product.style.display = 'none';
+            } else if (category === 'women' && !isWomens) {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    // Existing shuffle logic
+    const container = document.getElementById("product-container");
+    const products = Array.from(container.children);
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    shuffle(products);
+    container.innerHTML = "";
+    products.forEach(product => container.appendChild(product));
+});
+</script>
+<script>
+async function fetchRatingWithRetry(productId, retries = 3, delay = 1000) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const res = await fetch(`http://127.0.0.1:5000/rating/overall/${productId}`);
+
+            if (!res.ok) {
+                // Log the raw response text if it's not OK, to see what the server sent
+                const errorText = await res.text(); 
+                console.error(`HTTP error for ${productId}, status: ${res.status}, response: ${errorText}`);
+                if (res.status === 429) { // Too Many Requests
+                    console.warn(`Rate limited for ${productId}. Retrying in ${delay / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponential backoff
+                    continue; // Retry the request
+                }
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log(productId, data);
+            return data; // Return the data if successful
+        } catch (err) {
+            console.error(`Error loading rating for ${productId} (attempt <span class="math-inline">\{i \+ 1\}/</span>{retries}):`, err);
+            if (i < retries - 1) {
+                console.warn(`Retrying in ${delay / 1000}s...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+                delay *= 2; // Exponential backoff
+            } else {
+                throw err; // Re-throw if all retries failed
+            }
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const products = document.querySelectorAll(".product");
+
+    // Use Promise.all to fetch all ratings concurrently
+    // This will expose concurrency issues if they exist
+    await Promise.all(Array.from(products).map(async (product) => {
+        const productId = product.getAttribute("data-product-id");
+        const starContainer = product.querySelector("[data-stars]");
+
+        if (!productId || !starContainer) return;
+
+        try {
+            const data = await fetchRatingWithRetry(productId); // Use the retry function
+            const rating = Math.round(data.ratings || 0);
+            let starsHTML = "";
+
+            for (let i = 1; i <= 5; i++) {
+                starsHTML += `<i class="fas fa-star" style="color: ${i <= rating ? 'gold' : 'grey'};"></i>`;
+            }
+            starContainer.innerHTML = starsHTML;
+        } catch (error) {
+            console.error(`Final failure for product ${productId}:`, error);
+            // Optionally, display a "N/A" or empty stars if all retries fail
+            starContainer.innerHTML = '<span style="color: grey;">N/A</span>'; 
+        }
+    }));
+});
+</script>
 
 </html>

@@ -27,7 +27,7 @@ def getPerfume(productName):
 
             out_of_stock = redirected_soup.find('div', class_='notify-all-out-of-stock')
             if out_of_stock:
-                return "Out of stock"
+                return "Out of stock!"
             else:
                 price_span = redirected_soup.find('span', class_='sale-price-val')
 
@@ -50,14 +50,13 @@ def getFragrancex(productName):
     base_url = 'https://www.fragrancex.com/'
 
     retry_count = 0
-    max_retries = 5
-
-    scraper = cloudscraper.create_scraper()
+    max_retries = 10
 
     product_div = None
 
     while retry_count < max_retries:
         try:
+            scraper = cloudscraper.create_scraper()
             response = scraper.get(url)
             soup = BeautifulSoup(response.text, 'html.parser')
 
