@@ -47,11 +47,10 @@
         <div class="single-pro-details">
             <h6>Home / Product</h6>
             <h4>"Baccarat Rouge 540" </h4>
-            <h2 class="price" id="price">$8999 TWD</h2>
+            <h2 class="price" id="price">$4499 TWD</h2>
         
             <div class="size-options">
-                <button class="size-btn" data-price="8999">75 mL</button>
-                <button class="size-btn" data-price="11599">125 mL</button>
+                <button class="size-btn" data-price="4499">35 mL</button>
             </div>
         
             <form action="http://127.0.0.1:5000/add-to-cart" method="post" class="cart-form">
@@ -67,6 +66,19 @@
         
             <h4>Product details</h4>
             <span>Baccarat Rouge 540 by Maison Francis Kurkdjian is a luxurious, luminous fragrance that blends airy jasmine and radiant saffron with warm ambergris and cedarwood. Known for its unique, skin-melding scent, it leaves a trail that's both powerful and ethereal—perfect for those who want to stand out with elegance and mystery.</span>
+            <h4>Price comparison</h4>
+            <div class="table-container">
+                <table>
+                <tr>
+                    <th>perfume.com</th>
+                    <th>fragrancex.com</th>
+                </tr>
+                <tr>
+                    <td id="perfumePrice">Loading...</td>
+                    <td id="frangrancexPrice">Loading...</td>
+                </tr>
+                </table>
+            </div>
         </div>
         
 
@@ -212,7 +224,7 @@
             <a href="#">Sign in</a>
             <a href="#">Gift Vouchers</a>
             <a href="#">View Cart</a>
-            <a href="#">Track My Order</a>
+            <a href="../track_order.html">Track My Order</a>
             <a href="#">Help</a>
         </div>
 
@@ -405,4 +417,39 @@ const getUserId = () => {
         fetchUserReviews();
     });
 </script>
+<script>
+    fetch('http://127.0.0.1:5000/compare-price/Baccarat Rouge 540')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            document.getElementById("perfumePrice").innerText = data['perfume.com']
+            document.getElementById("frangrancexPrice").innerText = data['fragrancex.com']
+        })
+        .catch(error => {
+            console.error('Error fetching product stock:', error);
+        });
+</script>
+<style>
+    .table-container {
+      background-color: #fdf4ec;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      text-align: center;
+      font-size: 16px;
+      color: #444;
+      box-shadow: inset 0 0 0 1px #e0dcd8;
+    }
+
+    th {
+      background-color: #f1e4d8;
+      color: #333;
+    }
+  </style>
 </html>

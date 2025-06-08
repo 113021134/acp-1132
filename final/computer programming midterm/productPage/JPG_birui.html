@@ -50,11 +50,10 @@
         <div class="single-pro-details">
             <h6>Home / Product</h6>
             <h4>"Born in Roma Uomo Intense" </h4>
-            <h2 class="price" id="price">$3430 TWD</h2>
+            <h2 class="price" id="price">$2499 TWD</h2>
         
             <div class="size-options">
-                <button class="size-btn" data-price="3250">75 mL</button>
-                <button class="size-btn" data-price="4999">125 mL</button>
+                <button class="size-btn" data-price="2499">50 mL</button>
             </div>
         
             <form action="http://127.0.0.1:5000/add-to-cart" method="post" class="cart-form">
@@ -70,6 +69,19 @@
         
             <h4>Product details</h4>
             <span>Valentino Uomo Born In Roma Intense is a men's Eau de Parfum launched in 2023, crafted by perfumers Antoine Maisondieu and Guillaume Flavigny. This fragrance is designed to embody the duality of freshness and sensuality, capturing the essence of Roman nights.</span>
+            <h4>Price comparison</h4>
+            <div class="table-container">
+                <table>
+                <tr>
+                    <th>perfume.com</th>
+                    <th>fragrancex.com</th>
+                </tr>
+                <tr>
+                    <td id="perfumePrice">Loading...</td>
+                    <td id="frangrancexPrice">Loading...</td>
+                </tr>
+                </table>
+            </div>
         </div>
         
 
@@ -214,7 +226,7 @@
             <a href="#">Sign in</a>
             <a href="#">Gift Vouchers</a>
             <a href="#">View Cart</a>
-            <a href="#">Track My Order</a>
+            <a href="../track_order.html">Track My Order</a>
             <a href="#">Help</a>
         </div>
 
@@ -407,4 +419,39 @@ const getUserId = () => {
         fetchUserReviews();
     });
 </script>
+<script>
+    fetch('http://127.0.0.1:5000/compare-price/Born in Roma Uomo Intense')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            document.getElementById("perfumePrice").innerText = data['perfume.com']
+            document.getElementById("frangrancexPrice").innerText = data['fragrancex.com']
+        })
+        .catch(error => {
+            console.error('Error fetching product stock:', error);
+        });
+</script>
+<style>
+    .table-container {
+      background-color: #fdf4ec;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      text-align: center;
+      font-size: 16px;
+      color: #444;
+      box-shadow: inset 0 0 0 1px #e0dcd8;
+    }
+
+    th {
+      background-color: #f1e4d8;
+      color: #333;
+    }
+  </style>
 </html>

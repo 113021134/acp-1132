@@ -47,11 +47,10 @@
         <div class="single-pro-details">
             <h6>Home / Product</h6>
             <h4>"YSL Y" </h4>
-            <h2 class="price" id="price">$4100 TWD</h2>
+            <h2 class="price" id="price">$1999 TWD</h2>
         
             <div class="size-options">
-                <button class="size-btn" data-price="4100">75 mL</button>
-                <button class="size-btn" data-price="5799">125 mL</button>
+                <button class="size-btn" data-price="1999">60 mL</button>
             </div>
         
             <form action="http://127.0.0.1:5000/add-to-cart" method="post" class="cart-form">
@@ -66,6 +65,19 @@
         
             <h4>Product details</h4>
             <span>YSL Y by Yves Saint Laurent is a fresh and bold fragrance that combines crisp notes of bergamot and ginger with a heart of sage and geranium, resting on a deep base of cedarwood and tonka bean. It's a clean, modern scent that embodies confidence and creativity—ideal for the man who dares to follow his own path.</span>
+            <h4>Price comparison</h4>
+            <div class="table-container">
+                <table>
+                <tr>
+                    <th>perfume.com</th>
+                    <th>fragrancex.com</th>
+                </tr>
+                <tr>
+                    <td id="perfumePrice">Loading...</td>
+                    <td id="frangrancexPrice">Loading...</td>
+                </tr>
+                </table>
+            </div>
         </div>
         
 
@@ -210,7 +222,7 @@
             <a href="#">Sign in</a>
             <a href="#">Gift Vouchers</a>
             <a href="#">View Cart</a>
-            <a href="#">Track My Order</a>
+            <a href="../track_order.html">Track My Order</a>
             <a href="#">Help</a>
         </div>
 
@@ -405,4 +417,39 @@
         fetchUserReviews();
     });
 </script>
+<script>
+    fetch('http://127.0.0.1:5000/compare-price/Yves Saint Laurent Y')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            document.getElementById("perfumePrice").innerText = data['perfume.com']
+            document.getElementById("frangrancexPrice").innerText = data['fragrancex.com']
+        })
+        .catch(error => {
+            console.error('Error fetching product stock:', error);
+        });
+</script>
+<style>
+    .table-container {
+      background-color: #fdf4ec;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      text-align: center;
+      font-size: 16px;
+      color: #444;
+      box-shadow: inset 0 0 0 1px #e0dcd8;
+    }
+
+    th {
+      background-color: #f1e4d8;
+      color: #333;
+    }
+  </style>
 </html>
