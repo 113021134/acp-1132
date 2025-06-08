@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta  http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,38 +35,44 @@
 
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="../products/acquaarmaniprofondo.jpg" width="100%" id="MainImg" alt="">
+            <img src="../products/Creedaventus.jpg" width="100%" id="MainImg" alt="">
 
             <div class="small-img-row">
                 <div class="small-img-col">
-                    <img src="../products/acquaarmaniprofondo.jpg" width="100%" class="small-img" alt="">
+                    <img src="../products/Creedaventus.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="../products/Creedaventus.webp" width="100%" class="small-img" alt="">
                 </div>
             </div>
         </div>
 
         <div class="single-pro-details">
             <h6>Home / Product</h6>
-            <h4>"Acqua Di Gio Profondo" </h4>
-            <h2 class="price" id="price">$4300 TWD</h2>
+            <h4>"CREED Aventus Eau de Parfum" </h4>
+            <h2 class="price" id="price">$11000 TWD</h2>
         
             <div class="size-options">
-                <button class="size-btn" data-price="4300">75 mL</button>
-                <button class="size-btn" data-price="5699">125 mL</button>
+                <button class="size-btn" data-price="11000">100 mL</button>
+                <button class="size-btn" data-price="12000">120 mL</button>
             </div>
         
             <form action="http://127.0.0.1:5000/add-to-cart" method="post" class="cart-form">
                 <input type="number" min="1" value="1" class="quantity" name="quantity"> 
+
                 <!-- put number of stock from /item/1 -->
                 <span class="stock"></span>
                 <br>
                 <br>
                 <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-                <input type="hidden" name="productId" value="8">
+                <input type="hidden" name="productId" value="12">
             </form>
         
             <h4>Product details</h4>
-            <span>Acqua Di Giò Profondo by Giorgio Armani is a deep, aquatic fragrance that captures the intensity of the ocean with a modern twist. It opens with invigorating marine notes, bergamot, and green mandarin, then dives into aromatic rosemary and lavender, anchored by earthy patchouli and mineral amber. Fresh yet intense, it's a sophisticated scent for the man who embraces depth and authenticity.</span>
+            <span>Creed Aventus is a bold, iconic fragrance for men, launched in 2010, blending fruity and woody notes. It opens with a vibrant burst of pineapple and bergamot, evolves into a heart of birch and patchouli, and settles into a rich, smoky base of musk and oakmoss. A symbol of power and success, perfect for any occasion</span>
         </div>
+        
+
     </section>
 
     <section class="ratings" style="width: 90%; margin: auto;">
@@ -92,9 +99,6 @@
 
         </div>
     </section>
-
-
-
 
     <section id="product1" class="section-p1">
         <h2>Related Men's Fragrances</h2>
@@ -272,7 +276,7 @@ const getUserId = () => {
     document.getElementById('ratingForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const comment = document.getElementById('comment').value;
-        // alert(`Rating submitted: ${selectedRating} stars\nComment: ${comment}`);
+        // alert(Rating submitted: ${selectedRating} stars\nComment: ${comment});
 
         try {
             const response = await fetch('http://127.0.0.1:5000/rating', {
@@ -283,7 +287,7 @@ const getUserId = () => {
                 body: JSON.stringify({
                     rating: selectedRating,
                     comment: comment,
-                    productId: 8,
+                    productId: 12,
                     userId: getUserId()
                 })
             });
@@ -305,9 +309,8 @@ const getUserId = () => {
     });
 </script>
 
-
 <script>
-    fetch('http://127.0.0.1:5000/item/8')
+    fetch('http://127.0.0.1:5000/item/12')
         .then(response => response.json())
         .then(data => {
             const stock = data.quantity;
@@ -338,7 +341,7 @@ const getUserId = () => {
 <script>
     async function fetchAverageRating() {
         try {
-            const response = await fetch('http://127.0.0.1:5000/rating/overall/8');
+            const response = await fetch('http://127.0.0.1:5000/rating/overall/12');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -366,10 +369,11 @@ const getUserId = () => {
     // Call the function on page load
     window.addEventListener('DOMContentLoaded', fetchAverageRating);
 </script>
+
 <script>
     async function fetchUserReviews() {
         try {
-            const response = await fetch('http://127.0.0.1:5000/rating/8'); // Adjust the endpoint if needed
+            const response = await fetch('http://127.0.0.1:5000/rating/12'); // Adjust the endpoint if needed
             const reviews = await response.json(); // Assumes this returns an array of review objects
             
             console.log(reviews);
@@ -404,5 +408,4 @@ const getUserId = () => {
         fetchUserReviews();
     });
 </script>
-
 </html>

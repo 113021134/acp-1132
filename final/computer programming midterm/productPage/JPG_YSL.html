@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta  http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,23 +35,23 @@
 
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="../products/acquaarmaniprofondo.jpg" width="100%" id="MainImg" alt="">
+            <img src="../products/YSL.jpg" width="100%" id="MainImg" alt="">
 
             <div class="small-img-row">
                 <div class="small-img-col">
-                    <img src="../products/acquaarmaniprofondo.jpg" width="100%" class="small-img" alt="">
+                    <img src="../products/YSL.jpg" width="100%" class="small-img" alt="">
                 </div>
             </div>
         </div>
 
         <div class="single-pro-details">
             <h6>Home / Product</h6>
-            <h4>"Acqua Di Gio Profondo" </h4>
-            <h2 class="price" id="price">$4300 TWD</h2>
+            <h4>"YSL Y" </h4>
+            <h2 class="price" id="price">$4100 TWD</h2>
         
             <div class="size-options">
-                <button class="size-btn" data-price="4300">75 mL</button>
-                <button class="size-btn" data-price="5699">125 mL</button>
+                <button class="size-btn" data-price="4100">75 mL</button>
+                <button class="size-btn" data-price="5799">125 mL</button>
             </div>
         
             <form action="http://127.0.0.1:5000/add-to-cart" method="post" class="cart-form">
@@ -60,12 +61,14 @@
                 <br>
                 <br>
                 <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-                <input type="hidden" name="productId" value="8">
+                <input type="hidden" name="productId" value="10">
             </form>
         
             <h4>Product details</h4>
-            <span>Acqua Di Giò Profondo by Giorgio Armani is a deep, aquatic fragrance that captures the intensity of the ocean with a modern twist. It opens with invigorating marine notes, bergamot, and green mandarin, then dives into aromatic rosemary and lavender, anchored by earthy patchouli and mineral amber. Fresh yet intense, it's a sophisticated scent for the man who embraces depth and authenticity.</span>
+            <span>YSL Y by Yves Saint Laurent is a fresh and bold fragrance that combines crisp notes of bergamot and ginger with a heart of sage and geranium, resting on a deep base of cedarwood and tonka bean. It's a clean, modern scent that embodies confidence and creativity—ideal for the man who dares to follow his own path.</span>
         </div>
+        
+
     </section>
 
     <section class="ratings" style="width: 90%; margin: auto;">
@@ -88,13 +91,10 @@
             <p id="avg-text">Loading...</p>
     
             <h3>User Reviews</h3>
-                        <div id="user-reviews"></div>
+            <div id="user-reviews"></div>
 
         </div>
     </section>
-
-
-
 
     <section id="product1" class="section-p1">
         <h2>Related Men's Fragrances</h2>
@@ -259,7 +259,8 @@
             }
         });
     });
-const getUserId = () => {
+
+    const getUserId = () => {
         const cookies = document.cookie.split(';');
         for (let cookie of cookies) {
             cookie = cookie.trim();
@@ -272,7 +273,7 @@ const getUserId = () => {
     document.getElementById('ratingForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const comment = document.getElementById('comment').value;
-        // alert(`Rating submitted: ${selectedRating} stars\nComment: ${comment}`);
+        // alert(Rating submitted: ${selectedRating} stars\nComment: ${comment});
 
         try {
             const response = await fetch('http://127.0.0.1:5000/rating', {
@@ -283,7 +284,7 @@ const getUserId = () => {
                 body: JSON.stringify({
                     rating: selectedRating,
                     comment: comment,
-                    productId: 8,
+                    productId: 10,
                     userId: getUserId()
                 })
             });
@@ -305,9 +306,8 @@ const getUserId = () => {
     });
 </script>
 
-
 <script>
-    fetch('http://127.0.0.1:5000/item/8')
+    fetch('http://127.0.0.1:5000/item/10')
         .then(response => response.json())
         .then(data => {
             const stock = data.quantity;
@@ -338,7 +338,7 @@ const getUserId = () => {
 <script>
     async function fetchAverageRating() {
         try {
-            const response = await fetch('http://127.0.0.1:5000/rating/overall/8');
+            const response = await fetch('http://127.0.0.1:5000/rating/overall/10');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -366,10 +366,11 @@ const getUserId = () => {
     // Call the function on page load
     window.addEventListener('DOMContentLoaded', fetchAverageRating);
 </script>
+
 <script>
     async function fetchUserReviews() {
         try {
-            const response = await fetch('http://127.0.0.1:5000/rating/8'); // Adjust the endpoint if needed
+            const response = await fetch('http://127.0.0.1:5000/rating/10'); // Adjust the endpoint if needed
             const reviews = await response.json(); // Assumes this returns an array of review objects
             
             console.log(reviews);
@@ -404,5 +405,4 @@ const getUserId = () => {
         fetchUserReviews();
     });
 </script>
-
 </html>

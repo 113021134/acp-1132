@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta  http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Programming Midterm</title>
-        <link rel="stylesheet" href="../styles.css">
-
+    <link rel="stylesheet" href="../styles.css">
     <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
 </head>
 
@@ -34,37 +34,41 @@
 
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="../products/acquaarmaniprofondo.jpg" width="100%" id="MainImg" alt="">
+            <img src="../products/Althair pdm.jpg" width="100%" id="MainImg" alt="">
 
             <div class="small-img-row">
                 <div class="small-img-col">
-                    <img src="../products/acquaarmaniprofondo.jpg" width="100%" class="small-img" alt="">
+                    <img src="../products/Althair pdm.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="../products/Althair pdm.jpg" width="100%" class="small-img" alt="">
                 </div>
             </div>
         </div>
 
         <div class="single-pro-details">
             <h6>Home / Product</h6>
-            <h4>"Acqua Di Gio Profondo" </h4>
-            <h2 class="price" id="price">$4300 TWD</h2>
+            <h4>"Althair" </h4>
+            <h2 class="price" id="price">$7000 TWD</h2>
         
             <div class="size-options">
-                <button class="size-btn" data-price="4300">75 mL</button>
-                <button class="size-btn" data-price="5699">125 mL</button>
+                <button class="size-btn" data-price="3250">75 mL</button>
+                <button class="size-btn" data-price="4999">125 mL</button>
             </div>
         
             <form action="http://127.0.0.1:5000/add-to-cart" method="post" class="cart-form">
                 <input type="number" min="1" value="1" class="quantity" name="quantity"> 
+                
                 <!-- put number of stock from /item/1 -->
                 <span class="stock"></span>
                 <br>
                 <br>
                 <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-                <input type="hidden" name="productId" value="8">
+                <input type="hidden" name="productId" value="6">
             </form>
         
             <h4>Product details</h4>
-            <span>Acqua Di Giò Profondo by Giorgio Armani is a deep, aquatic fragrance that captures the intensity of the ocean with a modern twist. It opens with invigorating marine notes, bergamot, and green mandarin, then dives into aromatic rosemary and lavender, anchored by earthy patchouli and mineral amber. Fresh yet intense, it's a sophisticated scent for the man who embraces depth and authenticity.</span>
+            <span>Parfums de Marly Althaïr is a luxurious Eau de Parfum introduced in 2023, crafted by perfumers Hamid Merati-Kashani and Ilias Ermenidis. This fragrance offers a sophisticated blend of sweet, spicy, and woody notes, centered around high-quality Bourbon vanilla.</span>
         </div>
     </section>
 
@@ -92,9 +96,7 @@
 
         </div>
     </section>
-
-
-
+        
 
     <section id="product1" class="section-p1">
         <h2>Related Men's Fragrances</h2>
@@ -272,7 +274,7 @@ const getUserId = () => {
     document.getElementById('ratingForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const comment = document.getElementById('comment').value;
-        // alert(`Rating submitted: ${selectedRating} stars\nComment: ${comment}`);
+        // alert(Rating submitted: ${selectedRating} stars\nComment: ${comment});
 
         try {
             const response = await fetch('http://127.0.0.1:5000/rating', {
@@ -283,7 +285,7 @@ const getUserId = () => {
                 body: JSON.stringify({
                     rating: selectedRating,
                     comment: comment,
-                    productId: 8,
+                    productId: 6,
                     userId: getUserId()
                 })
             });
@@ -305,9 +307,8 @@ const getUserId = () => {
     });
 </script>
 
-
 <script>
-    fetch('http://127.0.0.1:5000/item/8')
+    fetch('http://127.0.0.1:5000/item/6')
         .then(response => response.json())
         .then(data => {
             const stock = data.quantity;
@@ -338,7 +339,7 @@ const getUserId = () => {
 <script>
     async function fetchAverageRating() {
         try {
-            const response = await fetch('http://127.0.0.1:5000/rating/overall/8');
+            const response = await fetch('http://127.0.0.1:5000/rating/overall/6');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -369,7 +370,7 @@ const getUserId = () => {
 <script>
     async function fetchUserReviews() {
         try {
-            const response = await fetch('http://127.0.0.1:5000/rating/8'); // Adjust the endpoint if needed
+            const response = await fetch('http://127.0.0.1:5000/rating/6'); // Adjust the endpoint if needed
             const reviews = await response.json(); // Assumes this returns an array of review objects
             
             console.log(reviews);
@@ -404,5 +405,4 @@ const getUserId = () => {
         fetchUserReviews();
     });
 </script>
-
 </html>
