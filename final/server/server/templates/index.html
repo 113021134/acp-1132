@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta  http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Programming Midterm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% include "header.html" %}
+
+    <section id="hero">
+        <h2>Value offer</h2>
+        <h3>Get 50% off on all products</h3>
+        <p>Bla bla bla bla bla</p>
+        <button onclick="location.href='/shop'">Shop now</button>
+
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Popular Products</h2>
+        <p>Most Purchased Fragrances This Month</p>
+        <div class="product-container">
+            {% for product in products[:8] %}
+            <div class="product" onclick="location.href='product/{{ product.id }}'" data-product-id="1">
+                <img src="{{ url_for('static', filename=product.image) }}" alt="">
+                <div class="des">
+                    <span>{{ product.brand }}</span>
+                    <h5>"{{ product.name }}"</h5>
+                    <div class="star" data-stars>
+                    </div>
+        
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id ="banner" class= ".section-m1">
+        <h2> Up to <span>60% Off</span> - All products</h2>
+        <button class="normal" onclick="location.href='/shop'">Click for more</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>New Arrivals</h2>
+        <p>New Fragrances in Our Catalog</p>
+        <div class="product-container">
+            {% for product in products[9:17] %}
+            <div class="product" onclick="location.href='product/{{ product.id }}'" data-product-id="1">
+                <img src="{{ url_for('static', filename=product.image) }}" alt="">
+                <div class="des">
+                    <span>{{ product.brand }}</span>
+                    <h5>"{{ product.name }}"</h5>
+                    <div class="star" data-stars>
+                    </div>
+        
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <section id="sm-banner" class=".section-p1">
+        <div class="banner-box">
+
+            <h2>Men's Fragrance</h2>
+            <span>Explore our catalog of men's fragrance</span>
+            <button class="white" onclick="location.href='/shop?category=men';">Browse</button>
+        </div>
+        <div class="banner-box banner-box2">
+
+            <h2>Women's Fragrance</h2>
+            <span>Explore our catalog of women's fragrance</span>
+            <button class="white" onclick="location.href='/shop?category=women';">Browse</button>
+        </div>
+    </section>
+
+    {% include "footer.html" %}
+
+    <script src="script.js"></script>
+</body>
+<script>
+async function fetchRatingWithRetry(productId, retries = 3, delay = 1000) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const res = await fetch(`http://127.0.0.1:5000/rating/overall/${productId}`);
+
+            if (!res.ok) {
+                // Log the raw response text if it's not OK, to see what the server sent
+                const errorText = await res.text(); 
+                console.error(`HTTP error for ${productId}, status: ${res.status}, response: ${errorText}`);
+                if (res.status === 429) { // Too Many Requests
+                    console.warn(`Rate limited for ${productId}. Retrying in ${delay / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponential backoff
+                    continue; // Retry the request
+                }
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log(productId, data);
+            return data; // Return the data if successful
+        } catch (err) {
+            console.error(`Error loading rating for ${productId} (attempt <span class="math-inline">\{i \+ 1\}/</span>{retries}):`, err);
+            if (i < retries - 1) {
+                console.warn(`Retrying in ${delay / 1000}s...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+                delay *= 2; // Exponential backoff
+            } else {
+                throw err; // Re-throw if all retries failed
+            }
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const products = document.querySelectorAll(".product");
+
+    // Use Promise.all to fetch all ratings concurrently
+    // This will expose concurrency issues if they exist
+    await Promise.all(Array.from(products).map(async (product) => {
+        const productId = product.getAttribute("data-product-id");
+        const starContainer = product.querySelector("[data-stars]");
+
+        if (!productId || !starContainer) return;
+
+        try {
+            const data = await fetchRatingWithRetry(productId); // Use the retry function
+            const rating = Math.round(data.ratings || 0);
+            let starsHTML = "";
+
+            for (let i = 1; i <= 5; i++) {
+                starsHTML += `<i class="fas fa-star" style="color: ${i <= rating ? 'gold' : 'grey'};"></i>`;
+            }
+            starContainer.innerHTML = starsHTML;
+        } catch (error) {
+            console.error(`Final failure for product ${productId}:`, error);
+            // Optionally, display a "N/A" or empty stars if all retries fail
+            starContainer.innerHTML = '<span style="color: grey;">N/A</span>'; 
+        }
+    }));
+});
+</script>
+</html>

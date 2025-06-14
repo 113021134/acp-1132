@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta  http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Programming Midterm</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    {% include "header.html" %}
+
+
+    <section id="page-header">
+        <h2>#WOW</h2>
+        <p>I will steal your ip if you dont checkout</p>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <div class="product-container" id="page1-products">
+            {% for product in products %}
+            <div class="product" onclick="window.location.href='product/{{ product.id }}'" data-product-id="{{ product.id }}">
+                <img src="{{ url_for('static', filename=product.image) }}" alt="">
+                <div class="des">
+                    <span>{{ product.brand }}</span>
+                    <h5>"{{ product.name }}"</h5>
+                    <div class="star" data-stars>
+                    </div>
+                </div>
+                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% include "footer.html" %}
+
+
+
+    <script src="script.js"></script>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+
+    if (category) {
+        const products = document.querySelectorAll('#product1 .product');
+        products.forEach(product => {
+            const productName = product.querySelector('h5').textContent.toLowerCase();
+            const isWomens = productName.includes('baccarat rouge 540');
+            const isMens = !isWomens; // All other products are men's
+
+            if (category === 'men' && !isMens) {
+                product.style.display = 'none';
+            } else if (category === 'women' && !isWomens) {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    // Existing shuffle logic
+    const container = document.getElementById("product-container");
+    const products = Array.from(container.children);
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    shuffle(products);
+    container.innerHTML = "";
+    products.forEach(product => container.appendChild(product));
+});
+</script>
+<script>
+async function fetchRatingWithRetry(productId, retries = 3, delay = 1000) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const res = await fetch(`http://127.0.0.1:5000/rating/overall/${productId}`);
+
+            if (!res.ok) {
+                // Log the raw response text if it's not OK, to see what the server sent
+                const errorText = await res.text(); 
+                console.error(`HTTP error for ${productId}, status: ${res.status}, response: ${errorText}`);
+                if (res.status === 429) { // Too Many Requests
+                    console.warn(`Rate limited for ${productId}. Retrying in ${delay / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponential backoff
+                    continue; // Retry the request
+                }
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log(productId, data);
+            return data; // Return the data if successful
+        } catch (err) {
+            console.error(`Error loading rating for ${productId} (attempt <span class="math-inline">\{i \+ 1\}/</span>{retries}):`, err);
+            if (i < retries - 1) {
+                console.warn(`Retrying in ${delay / 1000}s...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+                delay *= 2; // Exponential backoff
+            } else {
+                throw err; // Re-throw if all retries failed
+            }
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const products = document.querySelectorAll(".product");
+
+    // Use Promise.all to fetch all ratings concurrently
+    // This will expose concurrency issues if they exist
+    await Promise.all(Array.from(products).map(async (product) => {
+        const productId = product.getAttribute("data-product-id");
+        const starContainer = product.querySelector("[data-stars]");
+
+        if (!productId || !starContainer) return;
+
+        try {
+            const data = await fetchRatingWithRetry(productId); // Use the retry function
+            const rating = Math.round(data.ratings || 0);
+            let starsHTML = "";
+
+            for (let i = 1; i <= 5; i++) {
+                starsHTML += `<i class="fas fa-star" style="color: ${i <= rating ? 'gold' : 'grey'};"></i>`;
+            }
+            starContainer.innerHTML = starsHTML;
+        } catch (error) {
+            console.error(`Final failure for product ${productId}:`, error);
+            // Optionally, display a "N/A" or empty stars if all retries fail
+            starContainer.innerHTML = '<span style="color: grey;">N/A</span>'; 
+        }
+    }));
+});
+</script>
+
+</html>

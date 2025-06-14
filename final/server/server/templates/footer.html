@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Subscribe to our newsletter</h4>
+            <p>Get the latest updates and <span>offers.</span></p>
+        </div>
+        <div class="newsform">
+            <input type="email" placeholder="Enter your email">
+            <button class="normal">Subscribe</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 500號, Liufeng Rd, Wufeng District, Taichung City, 413</p>
+            <p><strong>Phone:</strong> +889 987-664-344</p>
+            <p><strong>Hours:</strong> 10.00 - 21.00 Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="/about">About us</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/Terms_conditions">Terms & Conditions</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="/signin">Sign in</a>
+            <a href="/contact">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install app</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="{{ url_for('static', filename='appstore.jpg') }}" alt="">
+                <img src="{{ url_for('static', filename='googleplay.jpg') }}" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="{{ url_for('static', filename='payment.png') }}" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2024 Computer Programming Midterm. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

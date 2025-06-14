@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Computer Programming Midterm</title>
+    <link rel="stylesheet"href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/ad3ff5f2f7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Header Section -->
+    {% include "header.html" %}
+
+
+<!-- FAQ Section -->
+<div class="container" style="max-width: 800px; margin: 60px auto; padding: 0 20px;">
+    <h1 style="text-align: center; margin-bottom: 40px; font-size: 32px;">Frequently Asked Questions</h1>
+
+    <details class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
+        <summary style="font-weight: bold; cursor: pointer; font-size: 18px;">What is your shipping policy?</summary>
+        <div class="faq-answer" style="margin-top: 10px; padding-left: 10px;">
+            <p>We offer free worldwide shipping on all orders above 1500 TWD. For orders below this amount, a flat shipping fee of 100 TWD applies. Delivery typically takes 5-7 business days within Taiwan and 10-14 business days internationally.</p>
+        </div>
+    </details>
+
+    <details class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
+        <summary style="font-weight: bold; cursor: pointer; font-size: 18px;">How can I return a product?</summary>
+        <div class="faq-answer" style="margin-top: 10px; padding-left: 10px;">
+            <p>We provide a 14-day return policy from the date of delivery. Products must be unopened and in original packaging. Please contact us at +889 987-664-344 to initiate a return; shipping costs are your responsibility unless the item is defective.</p>
+        </div>
+    </details>
+
+    <details class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
+        <summary style="font-weight: bold; cursor: pointer; font-size: 18px;">Are your fragrances authentic?</summary>
+        <div class="faq-answer" style="margin-top: 10px; padding-left: 10px;">
+            <p>Yes, all our fragrances are 100% authentic, sourced directly from authorized distributors to ensure you receive genuine luxury products from brands like Chanel and Dior.</p>
+        </div>
+    </details>
+
+    <details class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
+        <summary style="font-weight: bold; cursor: pointer; font-size: 18px;">Do you offer gift wrapping services?</summary>
+        <div class="faq-answer" style="margin-top: 10px; padding-left: 10px;">
+            <p>Yes, we offer gift wrapping for an additional 50 TWD. You can select this option at checkout to add a special touch to your fragrance purchase.</p>
+        </div>
+    </details>
+
+    <details class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; padding: 15px;">
+        <summary style="font-weight: bold; cursor: pointer; font-size: 18px;">Can I cancel or modify my order after placing it?</summary>
+        <div class="faq-answer" style="margin-top: 10px; padding-left: 10px;">
+            <p>Yes, you can request changes or cancellations within 24 hours of placing your order by contacting us at +889 987-664-344.</p>
+        </div>
+    </details>
+</div>
+
+<!-- Footer Section (unchanged) -->
+    {% include "footer.html" %}
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+    const bar = document.getElementById('bar');
+    const nav = document.getElementById('navbar');
+    const close = document.getElementById('close');
+
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add("active");
+        });
+    }
+
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove("active");
+        });
+    }
+</script>
+
+</body>
+</html>
