@@ -1,196 +1,220 @@
 {
-    "_default": {
-        "1": {
-            "name": "Le Beau Le Parfum",
-            "brand": "Jean Paul Gaultier",
-            "image": "products/JPG Lbeaufront.jpg",
-            "quantity": 69,
-            "size": 75,
-            "price": 2499
-        }, 
-        "2": {
-            "name": "Le Male Le Parfum",
-            "brand": "Jean Paul Gaultier",
-            "image": "products/LeParfum.jpg",
-            "quantity": 100,
-            "size": 75,
-            "price": 2799
-        }, 
-        "3": {
-            "name": "Bleu de Chanel",
-            "brand": "Chanel",
-            "image": "products/Chanel BdC.jpg",
-            "quantity": 100,
-            "size": 50,
-            "price": 2999
-        }, 
-        "4": {
-            "name": "Sauvage",
-            "brand": "Dior",
-            "image": "products/Dior Sauvage.jpg",
-            "quantity": 100,
-            "size": 60,
-            "price": 2499
-        },
-        "5": {
-            "name": "Stronger With You Absolutely",
-            "brand": "Giorgio Armani",
-            "image": "products/armani swyabs.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 3499
-            }, 
-        "6": {
-            "name": "Althair",
-            "brand": "Parfum De Marly",
-            "image": "products/Althair pdm.jpg",
-            "quantity": 100,
-            "size": 75,
-            "price": 5999
-        }, 
-        "7": {
-            "name": "Dylan Blue Pour Homme",
-            "brand": "Versace",
-            "image": "products/DylanBlueVersace.jpg",
-            "quantity": 100,
-            "size": 50,
-            "price":1999
-        }, 
-        "8": {
-            "name": "Acqua Di Gio Profondo",
-            "brand": "Giorgio Armani",
-            "image": "products/acquaarmaniprofondo.jpg",
-            "quantity": 100,
-            "size": 50,
-            "price": 1999
-        },
-        "9": {
-            "name": "Baccarat Rouge 540",
-            "brand": "Maison Francis Kurkdjian",
-            "image": "products/Baccarat540.jpg",
-            "quantity": 100,
-            "size": 35,
-            "price": 4499
-        }, 
-        "10": {
-            "name": "YSL Y",
-            "brand": "Yves Saint Laurent",
-            "image": "products/YSL.jpg",
-            "quantity": 100,
-            "size": 60,
-            "price": 1999
-        }, 
-        "11": {
-            "name": "MYSLF",
-            "brand": "Yves Saint Laurent",
-            "image": "products/YSLMYSLF.avif",
-            "quantity": 100,
-            "size": 60,
-            "price": 1999
-        }, 
-        "12": {
-            "name": "Aventus",
-            "brand": "Creed",
-            "image": "products/Creedaventus.jpg",
-            "quantity": 100,
-            "size": 30,
-            "price": 6999
-        },
-        "13": {
-            "name": "Tobacco Vanille",
-            "brand": "Tom Ford",
-            "image": "products/tomfordtobvan.jpg",
-            "quantity": 100,
-            "size": 75,
-            "price": 8499
-        }, 
-        "14": {
-            "name": "The Most Wanted Parfum",
-            "brand": "Azzaro",
-            "image": "products/Azzaromostwanted.jpg",
-            "quantity": 100,
-            "size": 50,
-            "price": 1999
-        },
-        "15": {
-            "name": "Born in Roma Uomo Intense",
-            "brand": "Valentino",
-            "image": "products/Valentino borninroma.jpg",
-            "quantity": 100,
-            "size": 50,
-            "price": 2499
-        },
-        "16": {
-            "name": "Eros Flame",
-            "brand": "Versace",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 2999
-        },
-        "17": {
-            "name": "Donna Born In Roma",
-            "brand": "Valentino",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 2000
-        },  
-        "18": {
-            "name": "Libre",
-            "brand": "Yves Saint Laurent",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 4100
-        },  
-        "19": {
-            "name": "Good Girl Blush",
-            "brand": "Carolina Herrera",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 4000
-        }, 
-        "20": {
-            "name": "Miss Dior",
-            "brand": "Dior",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 3999     
-        },  
-        "21": {
-            "name": "Coco Mademoisell",
-            "brand": "Chanel",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 3999
-        },  
-        "22": {
-            "name": "Bloom",
-            "brand": "Gucci",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 3100
-        },  
-        "23": {
-            "name": "Greenley",
-            "brand": "Parfum De Marly",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 8200
-        }, 
-        "24": {
-            "name": "God Of Fire",
-            "brand": "Stephane Humbert Lucas",
-            "image": "products/eros flame.jpg",
-            "quantity": 100,
-            "size": 100,
-            "price": 8400
-        }
+  "_default": {
+    "1": {
+      "name": "Le Beau Le Parfum",
+      "brand": "Jean Paul Gaultier",
+      "image": "JPG Lbeaufront.jpg",
+      "description": "In the Garden of Gaultier, temptation is even more sultry with Le Beau Le Parfum, the intense new eau de parfum. To seduce, all sins are permitted. There’s no need to hide behind the green vegetation of its iconic packaging. Wearing nothing but a golden fig leaf, this unique bottle naturally gets naked, its torso lacquered with a black and green dégradé effect. Its force of attraction? The forbidden fruit of a fresh and extremely addictive woody oriental, which tempts the senses to disobey.",
+      "quantity": 95,
+      "size": 75,
+      "price": 2499
+    },
+    "2": {
+      "name": "Le Male Le Parfum",
+      "brand": "Jean Paul Gaultier",
+      "image": "LeParfum.jpg",
+      "description": "In the Garden of Gaultier, temptation is even more sultry with Le Beau Le Parfum, the intense new eau de parfum. To seduce, all sins are permitted. There’s no need to hide behind the green vegetation of its iconic packaging. Wearing nothing but a golden fig leaf, this unique bottle naturally gets naked, its torso lacquered with a black and green dégradé effect. Its force of attraction? The forbidden fruit of a fresh and extremely addictive woody oriental, which tempts the senses to disobey.",
+      "quantity": 100,
+      "size": 75,
+      "price": 2799
+    },
+    "3": {
+      "name": "Bleu de Chanel",
+      "brand": "Chanel",
+      "image": "Chanel BdC.jpg",
+      "description": "Bleu de Chanel: A Modern Classic of Masculine Fragrance.Bleu de Chanel is a cornerstone of modern men's perfumery, a sophisticated and versatile fragrance collection from the esteemed House of Chanel. First introduced in 2010, it has become a global bestseller, celebrated for its timeless appeal that balances freshness with a sense of depth and mystery. The fragrance is presented in three distinct concentrations: Eau de Toilette (EDT), Eau de Parfum (EDP), and Parfum, each offering a nuanced interpretation of the signature scent.",
+      "quantity": 100,
+      "size": 50,
+      "price": 2999
+    },
+    "4": {
+      "name": "Sauvage",
+      "brand": "Dior",
+      "image": "Dior Sauvage.jpg",
+      "description": "Sauvage, by the illustrious House of Dior, is more than just a fragrance; it is a declaration of raw and noble masculinity that has captivated the global market since its launch. A powerful and unmistakable scent, Sauvage draws its inspiration from the immense and untamed beauty of wide-open spaces, evoking the image of a rocky landscape under a vast, ozone-blue sky.",
+      "quantity": 87,
+      "size": 60,
+      "price": 2499
+    },
+    "5": {
+      "name": "Stronger With You Absolutely",
+      "brand": "Giorgio Armani",
+      "image": "armani swyabs.jpg",
+      "description": "Emporio Armani Stronger With You is a men's fragrance line by Giorgio Armani, introduced in 2017. It is renowned for its warm, spicy, and sweet scent profile, making it particularly suitable for fall and winter seasons.",
+      "quantity": 100,
+      "size": 100,
+      "price": 3499
+    },
+    "6": {
+      "name": "Althair",
+      "brand": "Parfum De Marly",
+      "image": "Althair pdm.jpg",
+      "description": "Parfums de Marly Althaïr is a luxurious Eau de Parfum introduced in 2023, crafted by perfumers Hamid Merati-Kashani and Ilias Ermenidis. This fragrance offers a sophisticated blend of sweet, spicy, and woody notes, centered around high-quality Bourbon vanilla.",
+      "quantity": 100,
+      "size": 75,
+      "price": 5999
+    },
+    "7": {
+      "name": "Dylan Blue Pour Homme",
+      "brand": "Versace",
+      "image": "DylanBlueVersace.jpg",
+      "description": "Versace Dylan Blue Pour Homme is a bold and refined men’s fragrance that blends fresh citrus, spicy black pepper, and deep musky notes for a confident, masculine scent. With hints of bergamot, patchouli, and tonka bean, it’s perfect for everyday wear or special occasions—modern, powerful, and unmistakably Versace.",
+      "quantity": 100,
+      "size": 50,
+      "price": 1999
+    },
+    "8": {
+      "name": "Acqua Di Gio Profondo",
+      "brand": "Giorgio Armani",
+      "image": "acquaarmaniprofondo.jpg",
+      "description": "Acqua Di Giò Profondo by Giorgio Armani is a deep, aquatic fragrance that captures the intensity of the ocean with a modern twist. It opens with invigorating marine notes, bergamot, and green mandarin, then dives into aromatic rosemary and lavender, anchored by earthy patchouli and mineral amber. Fresh yet intense, it's a sophisticated scent for the man who embraces depth and authenticity.",
+      "quantity": 95,
+      "size": 50,
+      "price": 1999
+    },
+    "9": {
+      "name": "Baccarat Rouge 540",
+      "brand": "Maison Francis Kurkdjian",
+      "image": "Baccarat540.jpg",
+      "description": "Baccarat Rouge 540 by Maison Francis Kurkdjian is a luxurious, luminous fragrance that blends airy jasmine and radiant saffron with warm ambergris and cedarwood. Known for its unique, skin-melding scent, it leaves a trail that's both powerful and ethereal—perfect for those who want to stand out with elegance and mystery.",
+      "quantity": 100,
+      "size": 35,
+      "price": 4499
+    },
+    "10": {
+      "name": "YSL Y",
+      "brand": "Yves Saint Laurent",
+      "image": "YSL.jpg",
+      "description": "YSL Y by Yves Saint Laurent is a fresh and bold fragrance that combines crisp notes of bergamot and ginger with a heart of sage and geranium, resting on a deep base of cedarwood and tonka bean. It's a clean, modern scent that embodies confidence and creativity—ideal for the man who dares to follow his own path.",
+      "quantity": 100,
+      "size": 60,
+      "price": 1999
+    },
+    "11": {
+      "name": "MYSLF",
+      "brand": "Yves Saint Laurent",
+      "image": "YSLMYSLF.avif",
+      "description": "A bold, refillable woody floral fragrance for the modern man. Vibrant Calabrian bergamot opens, followed by rich Tunisian orange blossom and warm patchouli-Ambofix™ base notes. Housed in a sleek, sustainable black lacquered bottle with the YSL Cassandre logo. A timeless, distinctive scent celebrating individuality.",
+      "quantity": 100,
+      "size": 60,
+      "price": 1999
+    },
+    "12": {
+      "name": "Aventus",
+      "brand": "Creed",
+      "image": "Creedaventus.jpg",
+      "description": "Creed Aventus is a bold, iconic fragrance for men, launched in 2010, blending fruity and woody notes. It opens with a vibrant burst of pineapple and bergamot, evolves into a heart of birch and patchouli, and settles into a rich, smoky base of musk and oakmoss. A symbol of power and success, perfect for any occasion.",
+      "quantity": 100,
+      "size": 30,
+      "price": 6999
+    },
+    "13": {
+      "name": "Tobacco Vanille",
+      "brand": "Tom Ford",
+      "image": "tomfordtobvan.jpg",
+      "description": "A luxurious, warm, and iconic fragrance inspired by an English gentleman's club. This oriental spicy scent blends rich tobacco leaf and spicy notes with creamy tonka bean, vanilla, cocoa, and dry fruit accords. Sweet wood sap adds depth, creating an opulent, long-lasting impression of confidence and sophistication. Perfect for all genders, housed in an elegant chess-piece-inspired flacon.",
+      "quantity": 100,
+      "size": 75,
+      "price": 8499
+    },
+    "14": {
+      "name": "The Most Wanted Parfum",
+      "brand": "Azzaro",
+      "image": "Azzaromostwanted.jpg",
+      "description": "A magnetic and sophisticated fragrance for the bold, modern man. This Fougère Oriental Woody scent opens with vibrant cardamom, followed by a rich, addictive toffee accord, and settles into a sensual amber wood base. Housed in an iconic, deep matte black barrel-shaped bottle, it’s the ultimate seductive cologne for date nights and special occasions.",
+      "quantity": 100,
+      "size": 50,
+      "price": 1999
+    },
+    "15": {
+      "name": "Born in Roma Uomo Intense",
+      "brand": "Valentino",
+      "image": "Valentino borninroma.jpg",
+      "description": "Valentino Uomo Born In Roma Intense is a men's Eau de Parfum launched in 2023, crafted by perfumers Antoine Maisondieu and Guillaume Flavigny. This fragrance is designed to embody the duality of freshness and sensuality, capturing the essence of Roman nights.",
+      "quantity": 88,
+      "size": 50,
+      "price": 2499
+    },
+    "16": {
+      "name": "Eros Flame",
+      "brand": "Versace",
+      "image": "eros flame.jpg",
+      "description": "Versace Eros Flame is a men's Eau de Parfum introduced in 2018, crafted by perfumer Olivier Pescheux. This fragrance is designed to embody the duality of freshness and sensuality, capturing the essence of passionate love.",
+      "quantity": 92,
+      "size": 100,
+      "price": 2999
+    },
+    "17": {
+      "name": "Donna Born In Roma",
+      "brand": "Valentino",
+      "image": "vltn_dbir.jpg",
+      "description": "Launched in 2019, Valentino Born In Roma Donna Eau de parfum is a women's perfume inspired by Rome—a place where past and present coexist. The modern ambery fragrance tells a story of self-expression: a celebration of people living life freely while embracing their heritage. It is luxuriously feminine with an edgy touch inspired by Rome's Street culture today.",
+      "quantity": 100,
+      "size": 100,
+      "price": 2000
+    },
+    "18": {
+      "name": "Libre",
+      "brand": "Yves Saint Laurent",
+      "image": "libreYSL.jpg",
+      "description": "Libre Eau de Parfum is a bold, floral perfume for women. A statement feminine fragrance for those who live by their own rules, is also a statement of value and sustainability, refillable at home with a 100ml refill bottle. Lavender essence from France combines with the sensuality of Moroccan orange blossom, daring notes of musk accord and warm vanilla to create a unique long-lasting perfume.",
+      "quantity": 100,
+      "size": 100,
+      "price": 4100
+    },
+    "19": {
+      "name": "Good Girl Blush",
+      "brand": "Carolina Herrera",
+      "image": "ggb_carolina.jpg",
+      "description": "Good Girl Blush Eau de Parfum is a fresh, floral explosion of femininity housed in a delicate blush-pink stiletto.",
+      "quantity": 100,
+      "size": 100,
+      "price": 4000
+    },
+    "20": {
+      "name": "Miss Dior",
+      "brand": "Dior",
+      "image": "missdior.jpg",
+      "description": "In 1947, Miss Dior was born to re-enchant women's lives with the sparkling colors of love. At the time, this scent was synonymous with renewed happiness, poetry, and harmony for Christian Dior. Miss Dior intrigues, excites and invites us to marvel at love and all the beauty in the world.",
+      "quantity": 100,
+      "size": 100,
+      "price": 3999
+    },
+    "21": {
+      "name": "Coco Mademoiselle",
+      "brand": "Chanel",
+      "image": "coco_chanel.png",
+      "description": "Irresistibly sensual, irrepressibly spirited. A sparkling, bold ambery fragrance that recalls a daring young Coco Chanel. An absolutely modern composition with a strong yet surprisingly fresh character. A double name, a double personality. Independent and endearing, mischievous and provocative, light and exuberant. The expression of a woman free to reinvent herself day after day.",
+      "quantity": 100,
+      "size": 100,
+      "price": 3999
+    },
+    "22": {
+      "name": "Bloom",
+      "brand": "Gucci",
+      "image": "gucci_bloom.jpg",
+      "description": "The newest addition to the Gucci Bloom bouquet is a lighter, more luminous interpretation of the original scent that gently encourages women become the truest version of themselves. The fragrance is characterized by a trio of Jasmine Bud extract, Tuberose and Rangoon Creeper. Further enriching the scent, a honeyed sweetness and green citrus facet is captured through the addition of Neroli accord—its delicate freshness and ethereal radiance embody the glowing twist on Bloom's white floral signature.",
+      "quantity": 100,
+      "size": 100,
+      "price": 3100
+    },
+    "23": {
+      "name": "Greenley",
+      "brand": "Parfum De Marly",
+      "image": "pdm_greenley.jpg",
+      "description": "Greenley is housed in a statuesque green bottle and modelled after its composition, reflective of pure energy and the fresh breath of spring. This olfactory signature draws upon nature to create a joyful whirlwind of fruit, citrus, bark and sap which flows into a crisp, tangy green apple surprise. With a daring juxtaposition of nature's finest materials, it is a rich, masculine fragrance that is designed to stand the test of time.",
+      "quantity": 100,
+      "size": 100,
+      "price": 8200
+    },
+    "24": {
+      "name": "God Of Fire",
+      "brand": "Stephane Humbert Lucas",
+      "image": "god_of_fire.webp",
+      "description": "God of Fire is inspired from the legend of Xiuhtecuhtli, God of fire, day and light in the Aztec mythology. Creator of all life, he is the mother and father of all Gods. He is the personification of light in the darkness, warmth in coldness and life in death. As a patron of kings and warriors, he is shown carrying a turquoise serpent around him and wearing a crown and ornaments made of a Turquoise blue stones.",
+      "quantity": 100,
+      "size": 100,
+      "price": 8400
     }
+  }
 }
