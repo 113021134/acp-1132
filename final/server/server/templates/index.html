@@ -14,228 +14,75 @@
     {% include "header.html" %}
 
     <section id="hero">
-        <h4>Computer Programming Midterm</h4>
         <h2>Value offer</h2>
         <h3>Get 50% off on all products</h3>
         <p>Bla bla bla bla bla</p>
-        <button onclick="location.href='shop.html';">Shop now</button>
+        <button onclick="location.href='/shop'">Shop now</button>
+
     </section>
 
     <section id="product1" class="section-p1">
         <h2>Popular Products</h2>
         <p>Most Purchased Fragrances This Month</p>
         <div class="product-container">
-            <div class="product" onclick="location.href='productPage/JPG_LeBeau.html';" data-product-id="1">
-                <img src="{{ url_for('static', filename='JPG LbeauLparfum.jpg') }}" alt="">
+            {% for product in products[:8] %}
+            <div class="product" onclick="location.href='product/{{ product.id }}'" data-product-id="1">
+                <img src="{{ url_for('static', filename=product.image) }}" alt="">
                 <div class="des">
-                    <span>Jean Paul Gaultier</span>
-                    <h5>"Le Beau Le Parfum"</h5>
+                    <span>{{ product.brand }}</span>
+                    <h5>"{{ product.name }}"</h5>
                     <div class="star" data-stars>
                     </div>
-                    <h4>$3250 TWD</h4>
+        
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='productPage/JPG_LeParfum.html';" data-product-id="2">
-                <img src="{{ url_for('static', filename='LeParfum.jpg') }}" alt="">
-                <div class="des">
-                    <span>Jean Paul Gaultier</span>
-                    <h5>"Le Male Le Parfum"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$3000 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_bdc.html';" data-product-id="3">
-                <img src="{{ url_for('static', filename='BDC chanel.jpg') }}" alt="">
-                <div class="des">
-                    <span>Chanel</span>
-                    <h5>"Bleu de Chanel"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$3650 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_sauvage.html';" data-product-id="4">
-                <img src="{{ url_for('static', filename='Dior Sauvage.jpg') }}" alt="">
-                <div class="des">
-                    <span>Dior</span>
-                    <h5>"Sauvage"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$3100 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_StrongerWith.html';" data-product-id="5">
-                <img src="{{ url_for('static', filename='armani swyabs.jpg') }}" alt="">
-                <div class="des">
-                    <span>Giorgio armani</span>
-                    <h5>"Stronger With You Absolutely"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$3300 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_birui.html';" data-product-id="15">
-                <img src="{{ url_for('static', filename='Valentino borninroma.jpg') }}" alt="">
-                <div class="des">
-                    <span>Valentino</span>
-                    <h5>"Born in Roma Uomo Intense"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$3430 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_ef.html';" data-product-id="16">
-                <img src="{{ url_for('static', filename='eros flame.jpg') }}" alt="">
-                <div class="des">
-                    <span>Versace</span>
-                    <h5>"Eros Flame"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$3000 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_althair.html';" data-product-id="6">
-                <img src="{{ url_for('static', filename='Althair pdm.jpg') }}" alt="">
-                <div class="des">
-                    <span>Parfum De Marly</span>
-                    <h5>"Althair"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$7000 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
     <section id ="banner" class= ".section-m1">
-        <h4>What the Sigma</h4>
         <h2> Up to <span>60% Off</span> - All products</h2>
-        <button class="normal" onclick="location.href='shop.html';">Click for more</button>
+        <button class="normal" onclick="location.href='/shop'">Click for more</button>
     </section>
 
     <section id="product1" class="section-p1">
         <h2>New Arrivals</h2>
         <p>New Fragrances in Our Catalog</p>
         <div class="product-container">
-            <div class="product" onclick="location.href='productPage/JPG_DylanBlueVersace.html';" data-product-id="7">
-                <img src="{{ url_for('static', filename='DylanBlueVersace.jpg') }}" alt="">
+            {% for product in products[9:17] %}
+            <div class="product" onclick="location.href='product/{{ product.id }}'" data-product-id="1">
+                <img src="{{ url_for('static', filename=product.image) }}" alt="">
                 <div class="des">
-                    <span>Versace</span>
-                    <h5>"Dylan Blue Pour Homme"</h5>
+                    <span>{{ product.brand }}</span>
+                    <h5>"{{ product.name }}"</h5>
                     <div class="star" data-stars>
                     </div>
-                    <h4>$2300 TWD</h4>
+        
                 </div>
                 <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
             </div>
-            <div class="product" onclick="location.href='productPage/JPG_acquaarmaniprofondo.html';" data-product-id="8">
-                <img src="{{ url_for('static', filename='acquaarmaniprofondo.jpg') }}" alt="">
-                <div class="des">
-                    <span>Giorgio Armani</span>
-                    <h5>"Acqua Di Gio Profondo"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$4300 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_Baccarat540.html';" data-product-id="9">
-                <img src="{{ url_for('static', filename='Baccarat540.jpg') }}" alt="">
-                <div class="des">
-                    <span>Maison Francis Kurkdjian</span>
-                    <h5>"Baccarat Rouge 540"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$8999 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_YSL.html';" data-product-id="10">
-                <img src="{{ url_for('static', filename='YSL.jpg') }}" alt="">
-                <div class="des">
-                    <span>Yves Saint Laurent</span>
-                    <h5>"YSL Y"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$4100 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_YSL_MYSLF.html';" data-product-id="11">
-                <img src="{{ url_for('static', filename='YSLMYSLF.avif') }}" alt="">
-                <div class="des">
-                    <span>Yves Saint Laurent</span>
-                    <h5>"MYSLF"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$4000 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_Creedaventus.html';" data-product-id="12">
-                <img src="{{ url_for('static', filename='Creedaventus.jpg') }}" alt="">
-                <div class="des">
-                    <span>Creed</span>
-                    <h5>"Aventus"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$11000 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_Tomford.html';" data-product-id="13">
-                <img src="{{ url_for('static', filename='tomfordtobvan.jpg') }}" alt="">
-                <div class="des">
-                    <span>Tom Ford</span>
-                    <h5>"Tobacco Vanille"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$9550 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="product" onclick="location.href='productPage/JPG_Azzaro.html';" data-product-id="14">
-                <img src="{{ url_for('static', filename='Azzaromostwanted.webp') }}" alt="">
-                <div class="des">
-                    <span>Azzaro</span>
-                    <h5>"The Most Wanted Parfum"</h5>
-                    <div class="star" data-stars>
-                    </div>
-                    <h4>$2000 TWD</h4>
-                </div>
-                <a href="#"><i class="fal fa-solid fa-shopping-cart cart"></i></a>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
 
     <section id="sm-banner" class=".section-p1">
         <div class="banner-box">
-            <h4>Discover more</h4>
+
             <h2>Men's Fragrance</h2>
             <span>Explore our catalog of men's fragrance</span>
-            <button class="white" onclick="location.href='shop.html?category=men';">Browse</button>
+            <button class="white" onclick="location.href='/shop?category=men';">Browse</button>
         </div>
         <div class="banner-box banner-box2">
-            <h4>Discover more</h4>
+
             <h2>Women's Fragrance</h2>
             <span>Explore our catalog of women's fragrance</span>
-            <button class="white" onclick="location.href='shop.html?category=women';">Browse</button>
+            <button class="white" onclick="location.href='/shop?category=women';">Browse</button>
         </div>
     </section>
 
     {% include "footer.html" %}
-
-
 
     <script src="script.js"></script>
 </body>

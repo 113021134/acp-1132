@@ -283,7 +283,38 @@ def login():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    products = db.all()
+    
+    for doc in products:
+        doc_id = doc.doc_id
+        doc['id'] = doc_id
+        
+    print(products)
+    return render_template("index.html", products=products)
+
+@app.route("/about")
+def kenly():
+    return render_template("about.html")
+
+@app.route("/contact")
+def suka():
+    return render_template("contact.html")
+
+@app.route("/FAQ")
+def nyepong():
+    return render_template("FAQ.html")
+
+@app.route("/privacy-policy")
+def kontol():
+    return render_template("privacy-policy.html")
+
+@app.route("/signin")
+def vando():
+    return render_template("signin.html")
+
+@app.route("/Terms_conditions")
+def ahah():
+    return render_template("Terms_conditions.html")
 
 @app.route("/shop")
 def shop():
